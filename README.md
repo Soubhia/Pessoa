@@ -1,2 +1,3 @@
 # Pessoa
-Interação entre pacotes em Delphi
+Estudos em Delphi 
+Desenvolvedor: Carlos Soubhia
