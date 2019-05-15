@@ -1,0 +1,64 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{4701ba83-8728-4519-b928-77b82ea5bb47}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Projects Include="pkEletronico.dproj" />
+    <Projects Include="pkPessoa.dproj" />
+    <Projects Include="pkTransporte.dproj" />
+    <Projects Include="Teste.dproj" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Default.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+<BorlandProject xmlns=""><Default.Personality></Default.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Target Name="pkTransporte">
+    <MSBuild Projects="pkTransporte.dproj" Targets="" />
+  </Target>
+  <Target Name="pkTransporte:Clean">
+    <MSBuild Projects="pkTransporte.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="pkTransporte:Make">
+    <MSBuild Projects="pkTransporte.dproj" Targets="Make" />
+  </Target>
+  <Target Name="pkPessoa">
+    <MSBuild Projects="pkPessoa.dproj" Targets="" />
+  </Target>
+  <Target Name="pkPessoa:Clean">
+    <MSBuild Projects="pkPessoa.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="pkPessoa:Make">
+    <MSBuild Projects="pkPessoa.dproj" Targets="Make" />
+  </Target>
+  <Target Name="Teste">
+    <MSBuild Projects="Teste.dproj" Targets="" />
+  </Target>
+  <Target Name="Teste:Clean">
+    <MSBuild Projects="Teste.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="Teste:Make">
+    <MSBuild Projects="Teste.dproj" Targets="Make" />
+  </Target>
+  <Target Name="pkEletronico">
+    <MSBuild Projects="pkEletronico.dproj" Targets="" />
+  </Target>
+  <Target Name="pkEletronico:Clean">
+    <MSBuild Projects="pkEletronico.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="pkEletronico:Make">
+    <MSBuild Projects="pkEletronico.dproj" Targets="Make" />
+  </Target>
+  <Target Name="Build">
+    <CallTarget Targets="pkTransporte;pkPessoa;Teste;pkEletronico" />
+  </Target>
+  <Target Name="Clean">
+    <CallTarget Targets="pkTransporte:Clean;pkPessoa:Clean;Teste:Clean;pkEletronico:Clean" />
+  </Target>
+  <Target Name="Make">
+    <CallTarget Targets="pkTransporte:Make;pkPessoa:Make;Teste:Make;pkEletronico:Make" />
+  </Target>
+  <Import Condition="Exists('$(MSBuildBinPath)\Borland.Group.Targets')" Project="$(MSBuildBinPath)\Borland.Group.Targets" />
+</Project>
